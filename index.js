@@ -39,7 +39,7 @@ app.post('/createpost',async(req,res)=>{
 })
 app.get('/getpost', async (req, res) => {
     try {
-        const data = await Track.find();
+        const data = await Track.find().sort({date:1});
         console.log(data);
         res.status(200).json(data); // Sending response as JSON
     } catch (err) {
